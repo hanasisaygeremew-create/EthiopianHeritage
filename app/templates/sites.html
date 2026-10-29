@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Historical Sites | Ethiopian Heritage</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        
+        <a href="/" class="logo">
+        <img
+            src="{{ url_for('static', filename='images/ethiohist-logo.png') }}"
+            alt="EthioHist Logo"
+        >
+    </a>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/sites">Historical Sites</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="{{ url_for('heritage_map') }}">Explore Map</a></li>
+            <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- PAGE HEADER -->
+    <section class="sites-header">
+        <div class="sites-header-content">
+            <p class="section-subtitle">EXPLORE ETHIOPIA</p>
+
+            <h1>Historical Sites</h1>
+
+            <p>
+                Explore Ethiopia's remarkable historical places,
+                ancient cities, churches, castles, and cultural treasures.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- SITES SECTION -->
+    <section class="sites-section">
+
+        <!-- SEARCH AND FILTER -->
+        <div class="site-filters">
+
+            <div class="search-box">
+                 <input
+                     type="text"
+                     id="site-search"
+                     placeholder="Search historical sites..."
+            >
+        </div>
+
+        <div class="filter-box">
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="church">Historical Churches</option>
+                <option value="city">Ancient Cities</option>
+                <option value="castle">Castles & Palaces</option>
+            </select>
+        </div>
+
+    </div>
+
+        <!-- SECTION HEADING -->
+    
+        <div class="section-heading">
+            <p class="section-subtitle">DISCOVER</p>
+
+            <h2>Explore Our Heritage</h2>
+
+            <p>
+                Learn about some of Ethiopia's most important historical sites.
+            </p>
+        </div>
+
+
+</div>
+
+
+        <!-- SITE CARDS -->
+        <div class="site-cards">
+
+            <!-- Lalibela -->
+            <div class="site-card" data-category="church">
+
+                <div class="site-image">
+                    <img
+                        src="{{ url_for('static', filename='images/lalibela.jpg') }}"
+                        alt="Lalibela historical site">
+                </div>
+
+                <div class="site-info">
+
+                    <span class="site-category">
+                        Historical Church
+                    </span>
+
+                    <h3>Lalibela</h3>
+
+                    <p>
+                        Lalibela is famous for its remarkable rock-hewn
+                        churches carved directly into the ground.
+                    </p>
+
+                    <a href="{{ url_for('site_detail', slug='lalibela') }}" class="read-more">
+                        Learn more →
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- Aksum -->
+            <div class="site-card" data-category="city">
+
+                <div class="site-image">
+                    <img
+                        src="{{ url_for('static', filename='images/aksum.jpg') }}"
+                        alt="Aksum historical site">
+                </div>
+
+                <div class="site-info">
+
+                    <span class="site-category">
+                        Ancient City
+                    </span>
+
+                    <h3>Aksum</h3>
+
+                    <p>
+                        Aksum was the center of an ancient civilization
+                        known for its impressive stone obelisks.
+                    </p>
+
+                    <a href="{{ url_for('site_detail', slug='aksum') }}" class="read-more">
+                        Learn more →
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- Gondar -->
+            <div class="site-card" data-category="castle">
+
+                <div class="site-image">
+                    <img
+                        src="{{ url_for('static', filename='images/gondar.jpg') }}"
+                        alt="Gondar historical site">
+                </div>
+
+                <div class="site-info">
+
+                    <span class="site-category">
+                        Castle & History
+                    </span>
+
+                    <h3>Gondar</h3>
+
+                    <p>
+                        Gondar is known for its historic castles,
+                        royal buildings, and rich cultural heritage.
+                    </p>
+
+                    <a href="{{ url_for('site_detail', slug='gondar') }}" class="read-more">
+                        Learn more →
+                    </a>
+
+                </div>
+            </div>
+            
+            <div class="site-card" data-category="city">
+
+                <div class="site-image">
+                    <img
+                        src="{{ url_for('static', filename='images/harar.jpg') }}"
+                        alt="Historic walled city of Harar Jugol">
+                </div>
+
+                <div class="site-info">
+
+                    <span class="site-category">
+                        Ancient City
+                    </span>
+
+                    <h3>Harar Jugol</h3>
+
+                    <p>
+                       Discover the historic walled city of eastern Ethiopia,
+                       known for its ancient streets, mosques, and rich culture.
+                    </p>
+
+                     <a href="{{ url_for('site_detail', slug='harar') }}" class="read-more">
+                         Learn More →
+                     </a>
+                </div>
+            </div>
+            
+            <div class="site-card" data-category="city">
+                <div class="site-image">
+                    <img
+                        src="{{ url_for('static', filename='images/tiya.jpg') }}"
+                        alt="Ancient stone monuments at Tiya"
+                    >
+                </div>
+
+                <div class="site-info">
+
+                    <span class="site-category">
+                        Archaeological Site
+                    </span>
+
+                    <h3>Tiya</h3>
+
+                    <p>
+                       Explore an archaeological site famous for its
+                       distinctive carved stone monuments and ancient heritage.
+                    </p>
+
+                    <a href="{{ url_for('site_detail', slug='tiya') }}" class="read-more">
+                         Learn More →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        
+        <div id="no-results" class="no-results" style="display: none;">
+            <span class="no-results-icon">🔎</span>
+            <h3>No historical sites found</h3>
+            <p>We couldn't find any sites matching your search.</p>
+        </div>
+
+
+    </section>
+    <script src="{{ url_for('static', filename='js/sites.js') }}"></script>
+
+</body>
