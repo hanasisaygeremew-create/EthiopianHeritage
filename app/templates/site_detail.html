@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.name }} | Ethiopian Heritage</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .detail-hero {
+            padding: 70px 7%;
+            background: #183c2b;
+            color: white;
+            text-align: center;
+        }
+
+        .detail-hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            margin: 15px 0;
+        }
+
+        .detail-hero p {
+            color: #e1e7e3;
+            line-height: 1.8;
+        }
+
+        .detail-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 55px 7%;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .detail-image {
+            display: block;
+            width: 100%;
+            max-height: 480px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 35px;
+        }
+
+        .detail-container h2 {
+            color: #183c2b;
+            margin: 25px 0 10px;
+        }
+
+        .detail-fact {
+            background: #f8f5ed;
+            padding: 22px;
+            border-left: 4px solid #d8b45a;
+            border-radius: 8px;
+            margin-top: 25px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #183c2b;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #a47d24;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="detail-hero">
+        <p>DISCOVER ETHIOPIA</p>
+        <h1>{{ site.name }}</h1>
+        <p>{{ site.short_description }}</p>
+    </header>
+
+    <main class="detail-container">
+        <img
+            class="detail-image"
+            src="{{ url_for('static', filename='images/' + site.image) }}"
+            alt="{{ site.name }}"
+        >
+
+        <h2>Location</h2>
+        <p>{{ site.location }}</p>
+
+        <h2>Historical Period</h2>
+        <p>{{ site.period }}</p>
+
+        <h2>History and Significance</h2>
+        <p>{{ site.history }}</p>
+
+        <div class="detail-fact">
+            <h2>Did You Know?</h2>
+            <p>{{ site.fact }}</p>
+        </div>
+
+        <a class="back-link"
+           href="{{ url_for('sites') }}">
+            ← Back to Historical Sites
+        </a>
+    </main>
+
+</body>
+</html>
