@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Ethiopian Heritage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <a href="/" class="logo">
+            <img
+                src="{{ url_for('static', filename='images/ethiohist-logo.png') }}"
+                alt="EthioHist Logo"
+            >
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/sites">Historical Sites</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="{{ url_for('heritage_map') }}">Explore Map</a></li>
+            <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+        </ul>
+
+</nav>
+
+
+    <!-- ABOUT HERO -->
+    <section class="about-hero">
+        <p class="about-label">OUR STORY</p>
+       <h1>Discover the Story of Ethiopia</h1>
+        <p>Celebrating our history, protecting our heritage, and inspiring future generations.</p>
+    </section>
+
+    <!-- ABOUT CONTENT -->
+    <section class="about-content">
+      <div class="about-text">
+            <p class="about-label">WHO WE ARE</p>
+            <h2>Connecting People With Ethiopia's Past</h2>
+            <p>
+                Ethiopian Heritage is an educational platform created to help
+                people discover and learn about Ethiopia's remarkable historical sites.
+            </p>
+            <p>
+                From the rock-hewn churches of Lalibela to the ancient obelisks
+                of Aksum and the royal castles of Gondar, Ethiopia preserves
+                a rich history that deserves to be explored and protected.
+            </p>
+        </div>
+
+        <div class="about-highlight">
+            <div class="highlight-icon">🏛️</div>
+            <h3>Our Mission</h3>
+            <p>
+                To make information about Ethiopia's historical places accessible
+                and encourage people to appreciate and preserve our shared heritage.
+            </p>
+        </div>
+    </section>
+
+    <!-- OUR VALUES -->
+    <section class="values-section">
+        <div class="section-heading">
+            <p class="section-subtitle">WHAT GUIDES US</p>
+            <h2>Our Values</h2>
+            <p>The principles behind our work to share Ethiopia's history.</p>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">📚</div>
+                <h3>Education</h3>
+                <p>Making historical knowledge easier for everyone to explore.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">🌍</div>
+                <h3>Culture</h3>
+                <p>Celebrating the diverse cultures and stories of Ethiopia.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">❤️</div>
+                <h3>Preservation</h3>`
+                <p>Encouraging care and respect for historical places.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>🇪🇹 Ethiopian Heritage</h3>
+                <p>Discover Ethiopia's history, culture, and remarkable historical places.</p>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/sites">Historical Sites</a>
+                    <a href="/about">About Us</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Explore Ethiopia</h4>
+                <p>Learn about our past.</p>
+                <p>Celebrate our culture.</p>
+                <p>Preserve our heritage.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ethiopian Heritage. Educational project.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
