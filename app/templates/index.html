@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ethiopian Heritage</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+    <a href="/" class="logo">
+        <img
+            src="{{ url_for('static', filename='images/ethiohist-logo.png') }}"
+            alt="EthioHist Logo"
+        >
+    </a>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/sites">Historical Sites</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="{{ url_for('heritage_map') }}">Explore Map</a></li>
+            <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+        </ul>
+
+    </nav>
+
+<!-- Hero Section -->
+<section class="hero">
+
+    <div class="hero-content">
+        <p class="hero-subtitle">DISCOVER ETHIOPIA</p>
+
+        <h1>Explore Ethiopia's<br>Historical Heritage</h1>
+
+        <p class="hero-text">
+            Discover the stories, culture, and history behind
+            Ethiopia's most remarkable historical sites.
+        </p>
+
+        <a href="/sites" class="hero-button">
+            Explore Historical Sites
+        </a>
+    </div>
+
+</section>
+
+<!-- Featured Historical Sites -->
+<section class="featured-sites">
+
+    <div class="section-heading">
+        <p class="section-subtitle">EXPLORE ETHIOPIA</p>
+
+        <h2>Featured Historical Sites</h2>
+
+        <p>
+            Discover some of Ethiopia's most remarkable historical
+            and cultural treasures.
+        </p>
+    </div>
+
+
+    <div class="site-cards">
+
+        <!-- Lalibela -->
+        <div class="site-card">
+
+            <div class="site-image">
+                <img src="{{ url_for('static', filename='images/lalibela.jpg') }}"
+                     alt="Lalibela historical site">
+            </div>
+
+            <div class="site-info">
+                <span class="site-category">Cultural Heritage</span>
+
+                <h3>Lalibela</h3>
+
+                <p>
+                    Famous for its remarkable rock-hewn churches
+                    and important religious heritage.
+                </p>
+
+                <a href="/sites" class="read-more">
+                    Explore Site →
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- Aksum -->
+        <div class="site-card">
+
+            <div class="site-image">
+                <img src="{{ url_for('static', filename='images/aksum.jpg') }}"
+                     alt="Aksum historical site">
+            </div>
+
+            <div class="site-info">
+                <span class="site-category">Ancient Heritage</span>
+
+                <h3>Aksum</h3>
+
+                <p>
+                    An ancient city known for its archaeological
+                    heritage and famous stone obelisks.
+                </p>
+
+                <a href="/sites" class="read-more">
+                    Explore Site →
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- Gondar -->
+        <div class="site-card">
+
+            <div class="site-image">
+                <img src="{{ url_for('static', filename='images/gondar.jpg') }}"
+                     alt="Gondar historical site">
+            </div>
+
+            <div class="site-info">
+                <span class="site-category">Royal Heritage</span>
+
+                <h3>Gondar</h3>
+
+                <p>
+                    Home to historic castles and the famous
+                    royal enclosure of Fasil Ghebbi.
+                </p>
+
+                <a href="/sites" class="read-more">
+                    Explore Site →
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Why Heritage Matters -->
+<section class="heritage-section">
+
+    <div class="heritage-content">
+
+        <div class="heritage-text">
+
+            <p class="section-subtitle">OUR HERITAGE</p>
+
+            <h2>Preserving Ethiopia's History for the Future</h2>
+
+            <p>
+                Ethiopia has a rich history shaped by ancient civilizations,
+                unique cultures, religious traditions, and remarkable
+                historical sites.
+            </p>
+
+            <p>
+                Our platform makes it easier for students, visitors, and
+                anyone interested in Ethiopian history to discover and
+                learn about these important places.
+            </p>
+
+            <a href="/sites" class="heritage-button">
+                Discover More
+            </a>
+
+        </div>
+
+
+        <div class="heritage-features">
+
+            <div class="feature-box">
+                <div class="feature-icon">🏛️</div>
+                <h3>Rich History</h3>
+                <p>
+                    Explore places connected to Ethiopia's fascinating past.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">📚</div>
+                <h3>Learn</h3>
+                <p>
+                    Discover historical facts and cultural information.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">🌍</div>
+                <h3>Discover</h3>
+                <p>
+                    Find historical treasures from different parts of Ethiopia.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">❤️</div>
+                <h3>Preserve</h3>
+                <p>
+                    Help promote awareness of Ethiopia's cultural heritage.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+
+<!-- Footer -->
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <h3>🇪🇹 Ethiopian Heritage</h3>
+
+            <p>
+                Discover and learn about Ethiopia's rich historical
+                and cultural heritage.
+            </p>
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>Quick Links</h4>
+
+            <a href="/">Home</a>
+            <a href="/sites">Historical Sites</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+
+        </div>
+
+
+        <div class="footer-contact">
+
+            <h4>Explore Ethiopia</h4>
+
+            <p>History</p>
+            <p>Culture</p>
+            <p>Heritage</p>
+            <p>Tourism</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Ethiopian Heritage. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
