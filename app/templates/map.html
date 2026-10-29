@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore the Map | Ethiopian Heritage</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Leaflet map styles -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <style>
+        .map-header {
+            background: #183c2b;
+            color: white;
+            text-align: center;
+            padding: 65px 7%;
+        }
+
+        .map-header h1 {
+            font-size: clamp(30px, 5vw, 48px);
+            margin-bottom: 15px;
+        }
+
+        .map-header p {
+            color: #e1e7e3;
+            line-height: 1.7;
+        }
+
+        .map-section {
+            padding: 45px 7% 70px;
+            background: #f8f5ed;
+        }
+
+        #heritage-map {
+            height: 500px;
+            width: 100%;
+            border-radius: 14px;
+            border: 1px solid #dce3dc;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .map-caption {
+            margin-top: 18px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .map-site-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .map-site-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            border-top: 4px solid #d8b45a;
+        }
+
+        .map-site-card h3 {
+            color: #183c2b;
+            margin-bottom: 10px;
+        }
+
+        .map-site-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .map-site-card button {
+            background: #183c2b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .map-site-card button:hover {
+            background: #28563f;
+        }
+
+        @media (max-width: 768px) {
+            #heritage-map {
+                height: 380px;
+            }
+
+            .map-site-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="map-header">
+        <p>DISCOVER ETHIOPIA</p>
+        <h1>Explore Heritage on the Map</h1>
+        <p>
+            Discover the locations of Ethiopia's remarkable
+            historical places.
+        </p>
+    </header>
+
+    <main class="map-section">
+
+        <a href="{{ url_for('sites') }}" class="back-link">
+            <span>← Back to Historical Sites</span>
+        </a>
+
+        <div id="heritage-map" aria-label="Map of Ethiopian historical sites"></div>
+
+        <p class="map-caption">
+            Select a marker to learn about a historical site.
+            Map locations are approximate.
+        </p>
+
+        <div class="map-site-list">
+            <article class="map-site-card">
+                <h3>Lalibela</h3>
+                <p>Famous for its remarkable rock-hewn churches.</p>
+                <button type="button" data-site="lalibela">
+                    Find on map
+                </button>
+            </article>
+
+            <article class="map-site-card">
+                <h3>Aksum</h3>
+                <p>An ancient kingdom known for its monumental stelae.</p>
+                <button type="button" data-site="aksum">
+                    Find on map
+                </button>
+            </article>
+
+            <article class="map-site-card">
+                <h3>Gondar</h3>
+                <p>Historic royal castles and the Fasil Ghebbi complex.</p>
+                <button type="button" data-site="gondar">
+                    Find on map
+                </button>
+            </article>
+
+            <article class="map-site-card">
+                <h3>Harar Jugol</h3>
+                <p>A historic fortified town in eastern Ethiopia.</p>
+                <button type="button" data-site="harar">
+                    Find on map
+                </button>
+            </article>
+
+            <article class="map-site-card">
+                <h3>Tiya</h3>
+                <p>An archaeological site known for carved stone monuments.</p>
+                <button type="button" data-site="tiya">
+                    Find on map
+                </button>
+            </article>
+        </div>
+    </main>
+
+    <!-- Leaflet map library -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Our map functionality -->
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+
+</body>
+</html>
