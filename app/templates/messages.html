@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Messages | Ethiopian Heritage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 30px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #176b45;
+        }
+
+        .message-card {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #00000012;
+            overflow-wrap: anywhere;
+        }
+
+        .message-text {
+            white-space: pre-wrap;
+        }
+
+        .date {
+            color: #777;
+            font-size: 13px;
+        }
+
+        button, .back-link {
+            display: inline-block;
+            padding: 11px 18px;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button {
+            background: #b42318;
+            color: white;
+        }
+
+        .back-link {
+            background: #176b45;
+            color: white;
+        }
+
+        .empty {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Messages</h1>
+        <p>Ethiopian Heritage — Admin Dashboard</p>
+
+        <form action="{{ url_for('admin_logout') }}" method="POST" style="margin-bottom: 20px;">
+            <button type="submit">Log Out</button>
+            <a class="back-link" href="{{ url_for('home') }}">Back to Home</a>
+        </form>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message-card">
+                    <h2>{{ message["subject"] }}</h2>
+                    <p><strong>Name:</strong> {{ message["name"] }}</p>
+                    <p><strong>Email:</strong> {{ message["email"] }}</p>
+                    <p class="message-text"><strong>Message:</strong> {{ message["message"] }}</p>
+                    <p class="date">Received: {{ message["created_at"] }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="empty">
+                <p>No contact messages have been received yet.</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
